@@ -3,8 +3,8 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 plugins {
 	id("org.springframework.boot") version "3.0.3"
 	id("io.spring.dependency-management") version "1.1.0"
-	id("org.openapi.generator") version "6.3.0"
-	id("org.springdoc.openapi-gradle-plugin") version "1.6.0"
+//	id("org.openapi.generator") version "6.3.0"
+//	id("org.springdoc.openapi-gradle-plugin") version "1.6.0"
 	kotlin("jvm") version "1.7.22"
 	kotlin("plugin.spring") version "1.7.22"
 }
@@ -22,7 +22,7 @@ dependencies {
 	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 	implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
-	implementation("org.openapitools:openapi-generator-gradle-plugin:6.3.0")
+//	implementation("org.openapitools:openapi-generator-gradle-plugin:6.3.0")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
 sourceSets {
@@ -42,11 +42,11 @@ tasks.withType<KotlinCompile> {
 }
 
 
-openApiGenerate {
-	generatorName.set("kotlin")
-	inputSpec.set("$rootDir/src/main/resources/api-spec.yaml")
-	outputDir.set("$buildDir/generated")
-}
+//openApiGenerate {
+//	generatorName.set("kotlin")
+//	inputSpec.set("$rootDir/src/main/resources/api-spec.yaml")
+//	outputDir.set("$buildDir/generated")
+//}
 
 tasks.withType<Test> {
 	useJUnitPlatform()
